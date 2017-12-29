@@ -1,13 +1,8 @@
 import React from 'react';
 
-export default class NewAccount extends React.Component {
+export default class ModifyAccount extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  handleSubmit() {
-    if (this.isUserEntryValid() === false)
-      return ;
   }
 
   handleAccountNameChange(e) {}
@@ -18,15 +13,21 @@ export default class NewAccount extends React.Component {
 
   handlePasswordChange(e) {}
 
-  isUserEntryValid(e) {
+  handleSubmit() {
+    if (this.isUserEntryValid() === false)
+      return ;
+  }
+
+  isUserEntryValid() {
     return true;
   }
+
   render() {
     return(
       <form>
         <div className="form-group">
           <label htmlFor="accountName">Account Name</label>
-          <input type="text" className="form-control" id="accountName" placeholder="Account Name" onChange={this.handleAccountNameChange.bind(this)} />
+          <input type="text" className="form-control" id="accountName" placeholder="Account Name" disabled="true" onChange={this.handleAccountNameChange.bind(this)} />
         </div>
         <div className="form-group">
           <label htmlFor="website">Website</label>
