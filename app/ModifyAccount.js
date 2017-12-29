@@ -21,7 +21,7 @@ export default class ModifyAccount extends React.Component {
   isUserEntryValid() {
     return true;
   }
-
+// gonna want values with state in order to see current settings
   render() {
     return(
       <form>

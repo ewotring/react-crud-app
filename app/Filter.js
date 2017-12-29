@@ -4,9 +4,13 @@ export default class FilterAndAdd extends React.Component {
   constructor(props) {
     super(props);
   }
-  onAdd() {}
+  onAdd() {
+    this.props.OnAdd();
+  }
 
-  handleFilterChange(e) {}
+  handleFilterChange(e) {
+    this.props.OnFilter(e.target.value);
+  }
 
   render() {
     return(
