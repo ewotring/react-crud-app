@@ -30,11 +30,12 @@ export default class ManageAccounts extends React.Component {
     })
   }
 
-  showModifyAccountScreen() {
+  showModifyAccountScreen(accountToModify) {
     this.setState({
       ShowModifyAccountUI : true,
       ShowAccountList : false,
-      ShowFilterUI : false
+      ShowFilterUI : false,
+      AccountToBeModified: accountToModify
     })
   }
 
@@ -103,7 +104,7 @@ export default class ManageAccounts extends React.Component {
         {this.state.ShowFilterUI && <FilterAndAdd OnAdd={this.showNewAccountScreen.bind(this)} OnFilter={this.filterAccountList.bind(this)} />}
         {this.state.ShowAccountList && <AccountList Accounts={this.state.AccountList} OnEdit={this.showModifyAccountScreen.bind(this)} OnDelete={this.removeAccount.bind(this)} />}
         {this.state.ShowNewAccountUI && <NewAccount OnSubmit={this.addNewAccount.bind(this)} />}
-        {this.state.ShowModifyAccountUI && <ModifyAccount OnSubmit={this.modifyAccount.bind(this)} />}
+        {this.state.ShowModifyAccountUI && <ModifyAccount Account={this.state.AccountToBeModified} OnSubmit={this.modifyAccount.bind(this)} />}
       </div>
     );
   }
