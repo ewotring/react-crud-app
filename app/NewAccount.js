@@ -51,6 +51,7 @@ export default class NewAccount extends React.Component {
   }
   // added onChange back in. This was needed to see what I entered into the fields.
   // Also, without the onChange, my entered values did not get stored.
+  // This responsibility might belong elsewhere, but this
   render() {
     return(
       <form>

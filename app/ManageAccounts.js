@@ -39,7 +39,12 @@ export default class ManageAccounts extends React.Component {
   }
 
   filterAccountList(filter) {
-    alert(filter);
+    var newAccountList = JSON.parse(localStorage.getItem("AccountList")).filter(function(account) {
+      return account.AccountName.includes(filter);
+    });
+    this.setState({
+      AccountList: newAccountList,
+    });
   }
 
   addNewAccount(account) {
